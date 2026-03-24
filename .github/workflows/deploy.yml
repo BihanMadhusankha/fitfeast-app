@@ -35,9 +35,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # Vite පාවිච්චි කරනවා නම් 'dist', React Scripts නම් 'build' ලෙස වෙනස් කරන්න
           local-dir: ./fitfeast-app-frontend/dist/
-          # Hostinger එකේ වෙබ් එක තියෙන්න ඕන තැන (සාමාන්‍යයෙන් public_html)
           server-dir: /public_html/
-          # කලින් තිබුණ පරණ ෆයිල් මකන්න ඕන නැති නිසා මේක false තියන්න
-          delete-destination: false
+          # delete-destination වෙනුවට මේක පාවිච්චි කරන්න පුළුවන් (වුවමනා නම් පමණක්)
+          dangerous-clean-slate: false
