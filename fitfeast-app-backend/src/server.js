@@ -1,6 +1,9 @@
+// 1. මුලින්ම env vars ලෝඩ් කරන්න ඕනේ (මේක තමයි වැදගත්ම දේ!)
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
-const dotenv = require('dotenv');
+// 2. දැන් තමයි db එක import කරන්නේ
 const { connectDB, sequelize } = require('./config/db');
 require('./models'); // Load associations
 
@@ -9,12 +12,6 @@ const authRoutes = require('./routes/authRoutes');
 const mealRoutes = require('./routes/mealRoutes');
 const promoRoutes = require('./routes/promoRoutes');
 const orderRoutes = require('./routes/orderRoutes');
-
-// Load env vars
-dotenv.config();
-
-// Connect to database
-connectDB();
 
 const app = express();
 
@@ -37,12 +34,21 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 8080;
 
-// Sync database and start server
-sequelize.sync({ alter: true }).then(() => {
-    console.log('Database synced successfully');
-    app.listen(PORT, () => {
-        console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
-    });
-}).catch(err => {
-    console.error('Error syncing database:', err);
-});
+// 3. Database එක Connect කරලා පස්සේ Sync කරන්න
+const startServer = async () => {
+    try {
+        await connectDB(); // Connection එක චෙක් කරනවා
+
+        // Tables ටික හදනවා (Sync කරනවා)
+        await sequelize.sync({ alter: true });
+        console.log('✅ Database synced successfully and tables checked/created');
+
+        app.listen(PORT, '0.0.0.0', () => {
+            console.log(`🚀 Server running on port ${PORT}`);
+        });
+    } catch (err) {
+        console.error('❌ Unable to start the server:', err);
+    }
+};
+
+startServer();
