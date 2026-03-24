@@ -1,0 +1,81 @@
+[
+  {
+    "id": "m1",
+    "name": "Suwapiri Diyabath",
+    "category": "Healthy Traditions",
+    "protein": 8,
+    "calories": 250,
+    "carbs": 45,
+    "fats": 5,
+    "price": 450,
+    "image": "/images/diyabath.png",
+    "featured": true,
+    "trending": true,
+    "description": "A traditional Sri Lankan probiotic breakfast made with fermented rice and coconut milk.",
+    "ingredients": [
+      { "item": "Fermented Red Rice", "portion": "200g" },
+      { "item": "Coconut Milk", "portion": "100ml" },
+      { "item": "Small Red Onions", "portion": "20g" },
+      { "item": "Green Chilies", "portion": "5g" }
+    ]
+  },
+  {
+    "id": "m2",
+    "name": "Mega Protein Chicken Pack",
+    "category": "Gym",
+    "protein": 65,
+    "calories": 750,
+    "carbs": 50,
+    "fats": 15,
+    "price": 1150,
+    "image": "https://images.unsplash.com/photo-1585859330953-393273e0a17f?q=80&w=800&auto=format&fit=crop",
+    "featured": false,
+    "trending": true,
+    "description": "Double Grilled Chicken breast with brown rice, broccoli, and sweet potato.",
+    "ingredients": [
+      { "item": "Grilled Chicken", "portion": "250g" },
+      { "item": "Brown Rice", "portion": "150g" },
+      { "item": "Broccoli", "portion": "100g" },
+      { "item": "Sweet Potato", "portion": "100g" }
+    ]
+  },
+  {
+    "id": "m3",
+    "name": "Lean Beef & Quinoa Bowl",
+    "category": "Gym",
+    "protein": 45,
+    "calories": 450,
+    "carbs": 40,
+    "fats": 12,
+    "price": 1350,
+    "image": "/images/beef_bowl.png",
+    "featured": false,
+    "trending": false,
+    "description": "Grass-fed lean beef strips with quinoa, kale, and toasted almonds.",
+    "ingredients": [
+      { "item": "Lean Beef Strips", "portion": "200g" },
+      { "item": "Quinoa", "portion": "150g" },
+      { "item": "Steamed Kale", "portion": "80g" },
+      { "item": "Almonds", "portion": "15g" }
+    ]
+  },
+  {
+    "id": "m4",
+    "name": "Steamed Fish & Kurakkan Pittu",
+    "category": "Healthy Traditions",
+    "protein": 35,
+    "calories": 400,
+    "carbs": 55,
+    "fats": 8,
+    "price": 850,
+    "image": "/images/fish_pittu.png",
+    "featured": false,
+    "trending": true,
+    "description": "Fresh lagoon fish steamed with ginger and garlic, served with kurakkan pittu.",
+    "ingredients": [
+      { "item": "Lagoon Fish", "portion": "200g" },
+      { "item": "Kurakkan Pittu", "portion": "180g" },
+      { "item": "Ginger & Garlic Paste", "portion": "15g" }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "bases": [
+    { "id": "b1", "name": "Red Rice", "price": 100, "protein": 4, "calories": 210, "carbs": 45, "fats": 1, "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=400&auto=format&fit=crop" },
+    { "id": "b2", "name": "Brown Rice", "price": 120, "protein": 5, "calories": 220, "carbs": 46, "fats": 2, "image": "https://images.unsplash.com/photo-1591814468924-cafb5d1232e1?q=80&w=400&auto=format&fit=crop" },
+    { "id": "b3", "name": "White Basmati", "price": 150, "protein": 4, "calories": 210, "carbs": 45, "fats": 0, "image": "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?q=80&w=400&auto=format&fit=crop" },
+    { "id": "b4", "name": "Sweet Potato", "price": 200, "protein": 2, "calories": 180, "carbs": 41, "fats": 0, "image": "https://images.unsplash.com/photo-1596097635121-14b63b7a0c19?q=80&w=400&auto=format&fit=crop" }
+  ],
+  "proteins": [
+    { "id": "p1", "name": "Grilled Chicken", "price": 450, "protein": 31, "calories": 165, "carbs": 0, "fats": 4, "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=400&auto=format&fit=crop" },
+    { "id": "p2", "name": "Steamed Fish", "price": 550, "protein": 25, "calories": 140, "carbs": 0, "fats": 3, "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=400&auto=format&fit=crop" },
+    { "id": "p3", "name": "Beef Strips", "price": 650, "protein": 28, "calories": 250, "carbs": 0, "fats": 15, "image": "https://images.unsplash.com/photo-1529692236671-f1f6e9460272?q=80&w=400&auto=format&fit=crop" },
+    { "id": "p4", "name": "Soya Curry", "price": 300, "protein": 18, "calories": 150, "carbs": 12, "fats": 5, "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=400&auto=format&fit=crop" }
+  ],
+  "sides": [
+    { "id": "s1", "name": "Steamed Broccoli", "price": 150, "protein": 3, "calories": 35, "carbs": 7, "fats": 0, "image": "https://images.unsplash.com/photo-1452948491233-ad8a1ed01085?q=80&w=400&auto=format&fit=crop" },
+    { "id": "s2", "name": "Gotukola Sambol", "price": 100, "protein": 1, "calories": 45, "carbs": 8, "fats": 1, "image": "/images/gotukola.png" },
+    { "id": "s3", "name": "Green Beans", "price": 120, "protein": 2, "calories": 31, "carbs": 7, "fats": 0, "image": "https://images.unsplash.com/photo-1557844352-761f2565b576?q=80&w=400&auto=format&fit=crop" },
+    { "id": "s4", "name": "Mixed Salad", "price": 180, "protein": 1, "calories": 50, "carbs": 10, "fats": 1, "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=400&auto=format&fit=crop" }
+  ]
+}

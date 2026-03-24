@@ -1,0 +1,15 @@
+# Dependency folders (මේවා GitHub යවන්න ඕනේ නැහැ)
+node_modules/
+fitfeast-app-frontend/node_modules/
+fitfeast-app-backend/node_modules/
+
+# Environment variables (මේවායේ passwords තියෙන නිසා යවන්න එපා)
+.env
+
+# Build folders
+dist/
+build/
+
+# OS metadata
+.DS_Store
+Thumbs.db
