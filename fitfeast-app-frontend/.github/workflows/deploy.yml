@@ -1,0 +1,32 @@
+name: Deploy FitFeast App
+
+on:
+  push:
+    branches:
+      - main  # main branch එකට push කරද්දී වැඩේ පටන් ගන්නවා
+
+jobs:
+  deploy-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd fitfeast-app-frontend
+          npm install
+
+      - name: Build Frontend
+        run: |
+          cd fitfeast-app-frontend
+          npm run build
+
+      - name: Deploy Frontend via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./fitfeast-app-frontend/dist/ # Vite නම් dist, නැත්නම් build
+          server-dir: ./public_html/ # ඔයාගේ frontend එක තියෙන්න ඕන තැන
