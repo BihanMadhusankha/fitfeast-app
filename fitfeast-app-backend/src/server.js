@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
     res.send('FitFeast Lanka MySQL API is running...');
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 // Sync database and start server
 sequelize.sync({ alter: true }).then(() => {
