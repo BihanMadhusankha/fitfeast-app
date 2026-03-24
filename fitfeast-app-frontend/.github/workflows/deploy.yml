@@ -1,32 +1,43 @@
-name: Deploy FitFeast App
+name: Deploy FitFeast Frontend
 
 on:
   push:
     branches:
-      - main  # main branch එකට push කරද්දී වැඩේ පටන් ගන්නවා
+      - main  # ඔයා push කරන්නේ 'main' branch එකට නම් විතරක් මේක වැඩ කරයි
 
 jobs:
-  deploy-frontend:
+  web-deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
 
-      - name: Install Frontend Dependencies
+    steps:
+      # 1. GitHub එකේ තියෙන ඔයාගේ කෝඩ් එක මෙතනට ගන්නවා
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      # 2. Node.js පරිසරය සකස් කරනවා
+      - name: 🛠️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Hostinger එකට ගැලපෙන ස්ටේබල් වර්ෂන් එකක්
+
+      # 3. Frontend එක Build කරනවා
+      - name: 📦 Install and Build Frontend
         run: |
           cd fitfeast-app-frontend
           npm install
-
-      - name: Build Frontend
-        run: |
-          cd fitfeast-app-frontend
           npm run build
 
-      - name: Deploy Frontend via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      # 4. හැදුණු 'dist' ෆෝල්ඩර් එක FTP හරහා Hostinger එකට යවනවා
+      - name: 🚀 Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./fitfeast-app-frontend/dist/ # Vite නම් dist, නැත්නම් build
-          server-dir: ./public_html/ # ඔයාගේ frontend එක තියෙන්න ඕන තැන
+          # Vite පාවිච්චි කරනවා නම් 'dist', React Scripts නම් 'build' ලෙස වෙනස් කරන්න
+          local-dir: ./fitfeast-app-frontend/dist/
+          # Hostinger එකේ වෙබ් එක තියෙන්න ඕන තැන (සාමාන්‍යයෙන් public_html)
+          server-dir: /public_html/
+          # කලින් තිබුණ පරණ ෆයිල් මකන්න ඕන නැති නිසා මේක false තියන්න
+          delete-destination: false
